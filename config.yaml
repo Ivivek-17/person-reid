@@ -7,6 +7,6 @@ reid:
   top_k: 5
 
 paths:
-  gallery: data/
-  query: data/
-  index: embeddings/
+  gallery: data/Market_1501_dataset/bounding_box_test
+  query: data/Market_1501_dataset/query
+  index: embeddings/gallery.index
