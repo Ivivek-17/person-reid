@@ -1,5 +1,5 @@
 model:
-  name: facebook/dinov2-base
+  name: "facebook/dinov2-base"
   embedding_dim: 768
 
 reid:
