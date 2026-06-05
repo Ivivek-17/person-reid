@@ -1,0 +1,9 @@
+data/
+embeddings/
+venv/
+__pycache__/
+*.pt
+*.bin
+*.zip
+*.pkl
+.env

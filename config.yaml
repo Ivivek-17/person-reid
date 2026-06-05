@@ -1,0 +1,12 @@
+model:
+  name: facebook/dinov2-base
+  embedding_dim: 768
+
+reid:
+  similarity_threshold: 0.75
+  top_k: 5
+
+paths:
+  gallery: data/
+  query: data/
+  index: embeddings/
