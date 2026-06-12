@@ -24,9 +24,13 @@ def search_matches(
     index: faiss.Index,
     labels: np.ndarray,
     top_k: int,
+    precomputed_embedding: np.ndarray | None = None,
 ) -> list[tuple[str, float]]:
-    query_embedding = get_embedding(query_path, processor, model)
-    query_embedding = query_embedding.astype(np.float32).reshape(1, -1)
+    if precomputed_embedding is not None:
+        query_embedding = np.asarray(precomputed_embedding, dtype=np.float32).reshape(1, -1)
+    else:
+        query_embedding = get_embedding(query_path, processor, model)
+        query_embedding = query_embedding.astype(np.float32).reshape(1, -1)
     faiss.normalize_L2(query_embedding)
 
     scores, indices = index.search(query_embedding, top_k)
