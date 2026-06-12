@@ -57,6 +57,8 @@ person-reid/
 |   |-- eval.py
 |   `-- visualize.py
 `-- tests/
+    |-- test_cmc_fix.py
+    `-- test_eval_protocol.py
 ```
 
 ## Technical Design
@@ -105,7 +107,7 @@ The current implementation derives the person identity from the filename prefix 
 
 ## Configuration
 
-Project configuration lives in [config.yaml](D:\CDAC\person-reid\config.yaml).
+Project configuration lives in config.yaml
 
 Example:
 
@@ -239,9 +241,9 @@ Expected output format:
 ```text
 Evaluation Metrics
 ------------------
-Rank-1: XX.XX% (correct/total)
-Rank-5: XX.XX% (correct/total)
-mAP:    XX.XX%
+Rank-1: 81.77% (correct/total)
+Rank-5: 88.48% (correct/total)
+mAP:    78.62%
 ```
 
 ### 5. Generate qualitative review visuals
@@ -331,7 +333,7 @@ This script is designed for review workflows where quantitative metrics alone ar
 
 ### `No .jpg files found`
 
-Check the gallery and query paths in [config.yaml](D:\CDAC\person-reid\config.yaml) and confirm the Market-1501 dataset is placed under `data/Market_1501_dataset/`.
+Check the gallery and query paths in config.yam and confirm the Market-1501 dataset is placed under `data/Market_1501_dataset/`.
 
 ### `gallery.index` or `labels.npy` missing
 
